@@ -1,4 +1,5 @@
 return {
+
   -- Main LSP Configuration
   'neovim/nvim-lspconfig',
   dependencies = {
@@ -152,24 +153,62 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      require('lspconfig').clojure_lsp.setup {},
-      -- clangd = {},
-      -- gopls = {},
-      -- pyright = {},
-      -- rust_analyzer = {},
-      -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      --
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
-      --
-
-      lua_ls = {
-        -- cmd = {...},
-        -- filetypes = { ...},
-        -- capabilities = {},
+      require('lspconfig').clojure_lsp.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').awk_ls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').docker_compose_language_service.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').dockerls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').html.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').java_language_server.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').eslint.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').jsonls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').ltex.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').cssls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').grammarly.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').rnix.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').textlsp.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').pylsp.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').sqlls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').taplo.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').vimls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').yamlls.setup {
+        capabilities = capabilities,
+      },
+      require('lspconfig').lua_ls.setup {
+        capabilities = capabilities,
         settings = {
           Lua = {
             completion = {
@@ -194,6 +233,8 @@ return {
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format Lua code
+      'clj-kondo',
+      'cljfmt',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
