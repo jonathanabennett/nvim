@@ -43,5 +43,13 @@ These tend to be LSP related as they "Go" to a given destination
 - ` :: marks menu
 
 ## z
-Folds. These don't work yet, so I'm skipping them
+Folds. These don't work yet, so I'm skipping them.
+
+## c 
+Coding actions.
+
+- ca :: Code Actions (Do whatever your LSP recommends.)
+- d :: Disconnect from current repl
+- f :: connect to port specified in .nrepl.port
+
 
