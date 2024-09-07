@@ -2,4 +2,23 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {}
+return {
+  {
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  },
+  {
+    'tpope/vim-fireplace',
+  },
+  {
+    'clojure-vim/clojure.vim',
+  },
+  {
+    'olical/conjure',
+  },
+  {
+    'clojure-vim/vim-jack-in',
+  },
+  {
+    'clojure-vim/vim-cider',
+  },
+}
