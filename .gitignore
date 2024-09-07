@@ -5,3 +5,5 @@ nvim
 
 spell/
 lazy-lock.json
+.lsp/
+.clj-kondo/
