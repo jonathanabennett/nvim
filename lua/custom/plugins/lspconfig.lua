@@ -221,20 +221,32 @@ return {
       },
     }
 
-    -- Ensure the servers and tools above are installed
-    --  To check the current status of installed tools and/or manually install
-    --  other tools, you can run
-    --    :Mason
-    --
-    --  You can press `g?` for help in this menu.
     require('mason').setup()
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
+      'awk_ls',
+      'yamlls',
+      'vimls',
+      'sqlls',
+      'taplo',
+      'pylsp',
+      'textlsp',
+      'rnix',
+      'grammarly',
+      'cssls',
+      'eslint',
+      'ltex',
+      'docker_compose_language_service',
+      'dockerls',
+      'jsonls',
+      'html',
+      'java_language_server',
+      'clojure_lsp',
       'clj-kondo',
       'cljfmt',
+      'stylua', -- Used to format Lua code
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
