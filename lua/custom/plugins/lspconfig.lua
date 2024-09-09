@@ -153,61 +153,64 @@ return {
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      require('lspconfig').clojure_lsp.setup {
+      clojure_lsp = {
         capabilities = capabilities,
       },
-      require('lspconfig').awk_ls.setup {
+      awk_ls = {
         capabilities = capabilities,
       },
-      require('lspconfig').docker_compose_language_service.setup {
+      docker_compose_language_service = {
         capabilities = capabilities,
       },
-      require('lspconfig').dockerls.setup {
+      dockerls = {
         capabilities = capabilities,
       },
-      require('lspconfig').html.setup {
+      html = {
         capabilities = capabilities,
       },
-      require('lspconfig').java_language_server.setup {
+      java_language_server = {
         capabilities = capabilities,
       },
-      require('lspconfig').eslint.setup {
+      eslint = {
         capabilities = capabilities,
       },
-      require('lspconfig').jsonls.setup {
+      jsonls = {
         capabilities = capabilities,
       },
-      require('lspconfig').ltex.setup {
+      ltex = {
         capabilities = capabilities,
       },
-      require('lspconfig').cssls.setup {
+      cssls = {
         capabilities = capabilities,
       },
-      require('lspconfig').grammarly.setup {
+      grammarly = {
         capabilities = capabilities,
       },
-      require('lspconfig').rnix.setup {
+      rnix = {
         capabilities = capabilities,
       },
-      require('lspconfig').textlsp.setup {
+      textlsp = {
         capabilities = capabilities,
       },
-      require('lspconfig').pylsp.setup {
+      pylsp = {
         capabilities = capabilities,
       },
-      require('lspconfig').sqlls.setup {
+      sqlls = {
         capabilities = capabilities,
       },
-      require('lspconfig').taplo.setup {
+      taplo = {
         capabilities = capabilities,
       },
-      require('lspconfig').vimls.setup {
+      vimls = {
         capabilities = capabilities,
       },
-      require('lspconfig').yamlls.setup {
+      yamlls = {
         capabilities = capabilities,
       },
-      require('lspconfig').lua_ls.setup {
+      bashls = {
+        capabilities = capabilities,
+      },
+      lua_ls = {
         capabilities = capabilities,
         settings = {
           Lua = {
@@ -226,24 +229,6 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'awk_ls',
-      'yamlls',
-      'vimls',
-      'sqlls',
-      'taplo',
-      'pylsp',
-      'textlsp',
-      'rnix',
-      'grammarly',
-      'cssls',
-      'eslint',
-      'ltex',
-      'docker_compose_language_service',
-      'dockerls',
-      'jsonls',
-      'html',
-      'java_language_server',
-      'clojure_lsp',
       'clj-kondo',
       'cljfmt',
       'stylua', -- Used to format Lua code
