@@ -78,6 +78,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader><leader>', builtin.find_files, { desc = '[ ] Find Files' })
     vim.keymap.set('n', '<leader>bb', builtin.buffers, { desc = '[b] Find existing buffers' })
     vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
+    vim.keymap.set('n', '<leader>pf', builtin.git_files, { desc = '[P]roject git [F]iles' })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()
