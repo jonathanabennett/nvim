@@ -20,6 +20,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require 'vim-options'
+require 'keymaps'
 
 require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
