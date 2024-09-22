@@ -177,13 +177,10 @@ return {
       jsonls = {
         capabilities = capabilities,
       },
-      ltex = {
-        capabilities = capabilities,
-      },
       cssls = {
         capabilities = capabilities,
       },
-      grammarly = {
+      marksman = {
         capabilities = capabilities,
       },
       rnix = {
