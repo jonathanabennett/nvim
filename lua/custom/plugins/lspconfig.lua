@@ -156,9 +156,6 @@ return {
       clojure_lsp = {
         capabilities = capabilities,
       },
-      awk_ls = {
-        capabilities = capabilities,
-      },
       docker_compose_language_service = {
         capabilities = capabilities,
       },
@@ -168,7 +165,7 @@ return {
       html = {
         capabilities = capabilities,
       },
-      java_language_server = {
+      jdtls = {
         capabilities = capabilities,
       },
       eslint = {

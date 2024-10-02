@@ -65,7 +65,7 @@ vim.opt.inccommand = 'split'
 
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldlevelstart = 0
+vim.opt.foldlevelstart = 1
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
