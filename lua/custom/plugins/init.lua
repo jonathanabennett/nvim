@@ -3,6 +3,8 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+  { 'nvchad/volt', lazy = true },
+  { 'nvchad/minty', lazy = true },
   {
     'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   },
