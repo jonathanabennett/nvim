@@ -8,7 +8,9 @@ vim.cmd 'set shiftwidth=2'
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.wrap = false
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
