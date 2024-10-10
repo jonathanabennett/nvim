@@ -7,7 +7,7 @@ return {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.completion.spell,
         null_ls.builtins.diagnostics.clj_kondo,
-        null_ls.builtins.diagnostics.textlint,
+        -- null_ls.builtins.formatting.cljstyle,
       },
     }
   end,
