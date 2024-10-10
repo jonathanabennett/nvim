@@ -1,3 +1,4 @@
+-- TODO: Migrate keybindings into keymaps.lua
 return { -- Autocompletion
   'hrsh7th/nvim-cmp',
   event = 'InsertEnter',

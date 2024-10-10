@@ -10,6 +10,5 @@ return {
         null_ls.builtins.diagnostics.textlint,
       },
     }
-    vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
   end,
 }

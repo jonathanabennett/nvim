@@ -1,3 +1,4 @@
+-- TODO: Define custom keybinds
 return {
   'terrortylor/nvim-comment',
   config = function()
