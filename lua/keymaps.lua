@@ -31,8 +31,8 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- This keybinding deletes what's selected and pastes while preserving the yank register.
-vim.keymap.set('x', '<leader>p', [["_dP]])
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+vim.keymap.set('x', '<leader>p', [["_dP]], { desc = 'Delete preserving yank' })
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Toggle Undotree' })
 
 do -- Telescope direct access binds
   local builtin = require 'telescope.builtin'
