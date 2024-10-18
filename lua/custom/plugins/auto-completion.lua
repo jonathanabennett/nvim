@@ -34,6 +34,7 @@ return { -- Autocompletion
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'PaterJason/cmp-conjure',
   },
   config = function()
     -- See `:help cmp`
