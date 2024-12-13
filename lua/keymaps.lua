@@ -7,6 +7,7 @@
 --    function will be executed to configure the current buffer
 
 local wk = require 'which-key'
+
 wk.add {
   { '<leader>b', group = '[B]uffer' },
   { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
@@ -24,7 +25,9 @@ wk.add {
   { '<leader>w', group = '[W]orkspace' },
   { '<leader>t', group = '[T]oggle' },
   { '<leader>g', group = 'Git', mode = { 'n', 'v' } },
+  { '<leader>q', group = '[Q]uit', mode = 'n' },
 }
+
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
   callback = function(event)
@@ -305,4 +308,8 @@ end
 do --Telescope project binds
   local builtin = require 'telescope.builtin'
   vim.keymap.set('n', '<leader>pf', builtin.git_files, { desc = '[P]roject git [F]iles' })
+end
+
+do
+  vim.keymap.set('n', '<leader>qq', ':wqa<CR>', { desc = '[Q]uit' })
 end
