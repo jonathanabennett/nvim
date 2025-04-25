@@ -135,6 +135,7 @@ vim.keymap.set('n', '<leader>cf', ":lua require('conform').format { async = true
 vim.keymap.set('n', '<leader>cps', ":lua require('minty.shades').open()<cr>", { desc = 'Minty Shades color picker.' })
 vim.keymap.set('n', '<leader>cph', ":lua require('minty.huefy').open()<cr>", { desc = 'Minty Hue color picker.' })
 vim.keymap.set('n', '<leader>cn', vim.lsp.buf.format, { desc = 'Run linter/formatter' })
+vim.keymap.set('n', '<leader>cq', ':copen<cr>', { desc = 'Open Quickfix Window.' })
 
 vim.keymap.set('n', '<leader>cTt', ':TestNearest<CR>', { desc = 'Run nearest test' })
 vim.keymap.set('n', '<leader>cTT', ':TestFile<CR>', { desc = 'Test file' })
