@@ -4,10 +4,10 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
-    { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependents
-    'williamboman/mason-lspconfig.nvim',
+    { 'mason-org/mason.nvim', opts = {} }, -- NOTE: Must be loaded before dependents
+    'mason-org/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
-
+    'barreiroleo/ltex-extra.nvim',
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'j-hui/fidget.nvim', opts = {} },
@@ -88,9 +88,6 @@ return {
       rnix = {
         capabilities = capabilities,
       },
-      textlsp = {
-        capabilities = capabilities,
-      },
       pylsp = {
         capabilities = capabilities,
       },
@@ -123,7 +120,6 @@ return {
       },
     }
 
-    require('mason').setup()
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
@@ -145,6 +141,20 @@ return {
           require('lspconfig')[server_name].setup(server)
         end,
       },
+    }
+
+    require('lspconfig').ltex.setup {
+      on_attach = function()
+        require('ltex_extra').setup {
+          load_langs = { 'us' },
+          -- This is where your dictionary will be stored! Replace this directory with
+          -- whatever you want!
+          path = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add',
+        }
+        -- ...
+      end,
+      filetypes = { 'markdown', 'text', 'tex', 'gitcommit' },
+      flags = { debounce_text_changes = 300 },
     }
   end,
 }

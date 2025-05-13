@@ -4,6 +4,8 @@ vim.cmd 'set tabstop=2'
 vim.cmd 'set softtabstop=2'
 vim.cmd 'set shiftwidth=2'
 
+vim.opt.spellfile = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add'
+
 -- Make relative line numbers default
 vim.opt.number = true
 vim.opt.relativenumber = true
