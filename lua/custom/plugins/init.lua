@@ -6,7 +6,7 @@ return {
   { 'nvchad/volt', lazy = true },
   { 'nvchad/minty', lazy = true },
   {
-    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   },
   {
     'tpope/vim-fireplace',
