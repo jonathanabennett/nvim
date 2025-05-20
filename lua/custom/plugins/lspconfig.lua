@@ -131,6 +131,8 @@ return {
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
+      ensure_installed = {},
+      automatic_enable = false,
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
@@ -140,21 +142,24 @@ return {
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
           require('lspconfig')[server_name].setup(server)
         end,
+        ['ltex'] = function()
+          require('lspconfig').ltex.setup {
+            filetypes = { 'gitcommit', 'markdown', 'org', 'text' },
+            autostart = false,
+            on_attach = function(client, bufnr)
+              require('ltex_extra').setup {
+                load_langs = { 'en' },
+                path = vim.fn.expand '~' .. '/.local/share/ltex',
+              }
+            end,
+            settings = {
+              ltex = {
+                language = 'en',
+              },
+            },
+          }
+        end,
       },
-    }
-
-    require('lspconfig').ltex.setup {
-      on_attach = function()
-        require('ltex_extra').setup {
-          load_langs = { 'us' },
-          -- This is where your dictionary will be stored! Replace this directory with
-          -- whatever you want!
-          path = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add',
-        }
-        -- ...
-      end,
-      filetypes = { 'markdown', 'text', 'tex', 'gitcommit' },
-      flags = { debounce_text_changes = 300 },
     }
   end,
 }
