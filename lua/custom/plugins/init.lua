@@ -8,6 +8,7 @@ return {
   {
     'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
   },
+  { 'bullets-vim/bullets.vim' },
   {
     'tpope/vim-fireplace',
   },
