@@ -88,7 +88,7 @@ vim.keymap.set('n', '<Esc>', ':nohlsearch<CR>')
 -- No-op for Q to avoid getting stuck in Command mode
 vim.keymap.set('n', 'Q', '<nop>')
 
-vim.keymap.set('n', '<leader>n', ':Neotree filesystem toggle left<CR>')
+vim.keymap.set('n', '<leader>nn', ':Neotree filesystem toggle left<CR>')
 -- TIP: Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
