@@ -10,6 +10,7 @@ vim.o.spellfile = vim.fn.stdpath 'config' .. '/spell/en.utf-8.add'
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.confirm = true
+vim.o.conceallevel = 2
 
 vim.o.wrapmargin = 0
 vim.o.wrap = true
